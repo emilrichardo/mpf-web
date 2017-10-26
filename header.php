@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title><?php bloginfo('name'); ?>    <?php wp_title('|',true);?></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+	<meta name="description" content="">
+
+	 <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/images/favicon.png" />
+
+	<!-- Estilos css -->
+	<link rel="stylesheet" title="style"  type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />	
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/theme.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slick.css">
+	
+	
+	<!-- Fuentes -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+	<script src="https://use.fontawesome.com/9d068983ec.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">	
+	
+
+	<!-- Scripts-->
+
+<!-- Cambiar el color por #101116 -->
+<meta name="theme-color" content="#090921">
+
+<?php wp_head(); ?>
+<script>var $ = jQuery.noConflict();</script>
+
+</head>
+
+<body <?php body_class(); ?>>
+
+	<?php include("includes/nav.php") ?>
