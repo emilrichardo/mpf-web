@@ -434,4 +434,4 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 (1,	'mpwebadmin',	'$P$BTlgoEa9H/03mCEsOm0wNlrkPGURb20',	'mpwebadmin',	'informatica-mp@jussantiago.gov.ar',	'',	'2017-10-23 12:39:21',	'',	0,	'mpwebadmin'),
 (2,	'emilgonzalez',	'$P$BUDnTGOaUADPw3ws93aC7ncCs/.Nn1/',	'emilgonzalez',	'emilrichardo@gmail.com',	'',	'2017-10-23 14:57:41',	'1508770662:$P$Bh2YQHbIEv4q/wrSBdByl3wDpakxkM/',	0,	'Emil Gonzalez');
 
--- 2017-10-26 15:17:32
+-- 2017-10-27 12:47:11
