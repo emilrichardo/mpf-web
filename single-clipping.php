@@ -45,7 +45,10 @@
 
                   <div class="bg-light my-3 p-5 rounded">
                     <div class="caption text-md-left py-1 pr-md-4">
-                      <p>Publicado el día: <?php echo do_shortcode('[types field="fecha-de-publicacion"]'); ?></p>
+                      
+
+           <span>Publicado el día: <?php the_time('j  F, Y'); ?></span>
+           
                     
                      <h3 class="fw-light"><?php the_title(); ?></h3>
                     
