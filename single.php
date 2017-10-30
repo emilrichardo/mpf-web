@@ -41,25 +41,23 @@
             <?php the_post_thumbnail('large', array('class' => 'img-fluid', 'title' => 'Feature image')); ?>
           </div>
 
-         <!--  <div class="ca-gallery text-center">
-            <a href="#galeria" class="btn btn-success btn-img">
-              Ver galería de imagenes
-            </a>
-          </div> -->
+         <section id="galeria" class="galeria <?php echo do_shortcode('[types field="ocultar-galeria-slider"]'); ?>">
+
+            <h3>Galería de imágenes</h3>
+            <div class="galery-system single-slider <?php //echo do_shortcode('[types field="opciones-de-galeria-y-slider"]'); ?>">
+            <div>
+            <?php echo(types_render_field( 'galeria-de-fotos', array( 'separator' => '</div><div>' ) )); ?>
+              
+              </div>
+            </div>
+          </section>
 
           <section class="content-single text-left">
             <?php the_content(); ?>
 
           </section>
          
-          <section id="galeria" class="galeria <?php echo do_shortcode('[types field="ocultar-galeria-slider"]'); ?>">
-            <div class="galery-system <?php //echo do_shortcode('[types field="opciones-de-galeria-y-slider"]'); ?>">
-            <div>
-            <?php echo(types_render_field( 'galeria-de-fotos', array( 'separator' => '</div><div class="mt-3">' ) )); ?>
-              
-              </div>
-            </div>
-          </section>
+          
 
           
         </article>
