@@ -25,7 +25,7 @@
 					<div class="card card-super text-dark border-0 text-center ">
 					 <div class="img-cont">
 					 	 
-					 	 <?php the_post_thumbnail('medium', ['class' => 'card-img']); ?>
+					 	 <?php the_post_thumbnail('large', ['class' => 'card-img']); ?>
 					 </div>
 					  <div class="card-img-overlay p-5 ">
 					  	<div class="caption">
