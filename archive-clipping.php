@@ -49,36 +49,21 @@
                  
             <!-- the loop -->
                 
-                <div class="col-12 col-md-12 <?php   // Get terms for post
-                  $terms = get_the_terms( $post->ID , 'tipo-delito' );
-                 // Loop over each item since it's an array
-                  if ( $terms != null ){
-                   foreach( $terms as $term ) {
-                 // Print the name method from $term which is an OBJECT
-                     print $term->slug ;
-                 // Get rid of the other data stored in the object, since it's not needed
-                     unset($term);
-                   } } ?> <?php   // Get terms for post
-               $terms = get_the_terms( $post->ID , 'medio' );
-               // Loop over each item since it's an array
-               if ( $terms != null ){
-               foreach( $terms as $term ) {
-               // Print the name method from $term which is an OBJECT
-               print $term->slug ;
-               // Get rid of the other data stored in the object, since it's not needed
-               unset($term);
-              } } ?>">
+                <div class="col-12 col-md-12 ">
 
                   <div class="bg-light my-3 p-5 rounded">
                     <div class="caption text-md-left py-1 pr-md-4">
                       <div>Publicado el día <?php the_time('j  F, Y'); ?></div>
-                       
+
                     
                      <h3 class="fw-light"><?php the_title(); ?></h3>
+
                     
                       <span class="badge badge-secondary"><?php echo get_the_term_list( $post->ID, 'medio', '<strong>Medio:</strong> ', ', ' ); ?></span>
                       <span class="badge badge-secondary"><?php echo get_the_term_list( $post->ID, 'tipo-delito', '<strong>Delito:</strong> ', ', ' ); ?></span>
                       <span class="badge badge-secondary"><?php echo get_the_term_list( $post->ID, 'circunscripcion-cliping', '<strong>Circunscripción:</strong> ', ', ' ); ?></span>
+
+                      
                       
 
                       
@@ -89,7 +74,7 @@
                      </div>
                   </div>
                 
-              
+             
             </div><!-- item --> 
             <?php endwhile; // end of the loop. ?>
             
