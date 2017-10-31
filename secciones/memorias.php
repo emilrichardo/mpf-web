@@ -38,6 +38,10 @@
 			<div class="row d-flex align-items-center justify-content-center">
 				
 				<div class="col-md-7 col-10">
+
+					<h5 class="text-white">
+						SECRETARÍA DE ADMINISTRACIÓN Y PRESUPUESTO
+					</h5>
 					
 					<h2>Licitaciones y concursos de precios</h2>
 

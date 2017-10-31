@@ -1,5 +1,7 @@
 <?php get_header(); ?><!-- HEADER ########################-->  
 
+
+
 <div class="bg-infosss">
   
   
@@ -25,32 +27,54 @@
             </div>
 
             
-            <div class="row justify-content-center align-items-center">
-              <div class="col-md-4">
-                <h1>Contrataciones</h1>
+            
+                <h2>SECRETARÍA DE ADMINISTRACIÓN Y PRESUPUESTO</h2>
                 
-              </div>
-             
-            </div>
+              <p>
+               <i class="fa fa-map-marker text-info"></i> Calle Hipólito Yrigoyen N.º 706 4to Piso - <i class="fa fa-phone  text-info"></i> Tel. (0385) 450-4766  (int. 1467)  <br><i class="fa fa-envelope-o  text-info"></i> E-mail: contratacionesmp@jussantiago.gov.ar |
+               <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#modal-objetivos">
+              Objetivos de la sección
+            </button>
+            <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#modal-informacion"> <i class="fa fa-info-circle"></i>
+              Información
+            </button>
+            </p>
+            <!-- Button trigger modal -->
+            
+            <br>
+           
+
+
+            
+
+           
   
   
     
-            
+           <div class="filtro text-left mt-3">
+              <button class="btn btn-light filter-button" data-filter="all">Todas las contrataciones</button>
+                     <button class="btn btn-light filter-button" data-filter="licitaciones">Licitaciones</button>
+                     <button class="btn btn-light filter-button" data-filter="concurso-de-precios">Concurso de precios</button>
+           </div>
     
    
-            <div class="noticias-list mt-5 ">
+            <div class="noticias-list mt-2 ">
+
+               <?php 
+  // the query
+  $wpb_all_query = new WP_Query(array(
+    'post_type'=>'contratacion', 
+     
+    'posts_per_page'=>2,  )); ?>
     
     <?php   if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+
+
+
               <!-- the loop -->
 
-
-              
-
-              
-
-
-              <table class="table table-striped text-left rounded border  my-5 
-              <?php   // Get terms for post
+              <div class="item filter bg-light p-4 rounded my-3 <?php   // Get terms for post
                   $terms = get_the_terms( $post->ID , 'tipo' );
                  // Loop over each item since it's an array
                   if ( $terms != null ){
@@ -68,20 +92,20 @@
                print $term->slug ;
                // Get rid of the other data stored in the object, since it's not needed
                unset($term);
-              } } ?>
-
-              " >
-
+              } } ?>">
+                <div class="row text-left align-items-center">
+                  <div class="col-md-6">
+                    
+                    <span class="badge badge-success"><?php $terms = get_the_terms($post->ID, 'contratacion');foreach($terms as $term){echo $term->name;} ?></span>
+                    <br>
+                    <span>Objeto:</span>
+                    <h5><strong><?php the_title(); ?></strong></h5>
+                    <p><?php echo do_shortcode('[types field="estado-contratacion"]'); ?></p>
+                  </div>
+                  <div class="col-md-6">
+                    <table class="table table-sm table-striped text-left border" >               
                 
                 
-                <thead>
-                  <tr>
-                    
-                    
-                    <th colspan="2"  class="text-center"><h5><?php $terms = get_the_terms($post->ID, 'contratacion');foreach($terms as $term){echo $term->name;} ?></h5></th>
-                    
-                  </tr>
-                </thead>
                 
 
                 <tbody>
@@ -91,12 +115,7 @@
                     <td><strong><?php echo do_shortcode('[types field="tipo-y-n"]'); ?></strong></td>
                     
                   </tr>
-                  <tr>
-                    
-                    <td>Objeto:</td>
-                    <td><h4 class="fw-light"><?php the_title(); ?></h4></td>
-                    
-                  </tr>
+                  
                   <tr>
                     
                     <td>Fecha de Apertura:</td>
@@ -111,17 +130,7 @@
                   </tr>
                   <tr>
                     
-                    <td>Documentación:</td>
-                    <td>  
-
-
-
-
-                      
-
-
-
-
+                    <td colspan="2">Documentación:  
 
                       <a  href="<?php echo(types_render_field('documentacion')); ?>" target="blank">
 
@@ -137,16 +146,22 @@
                       
 
                       
-                     
-
-
-                      
-                      
                     </td>
                     
                   </tr>
                 </tbody>
               </table>
+                  </div>
+                </div>
+              </div>
+
+
+              
+
+              
+
+
+              
      
     
               
@@ -168,7 +183,60 @@
   
   
    </div>
+
+
+    <!-- Modal -->
+            <div class="modal fade" id="modal-objetivos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Objetivos de la sección</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>En esta sección se publican los llamados a licitación, tanto públicas como privadas, y los concursos de precios que realiza la Secretaría De Administración y Presupuesto del Ministerio Público Fiscal de Santiago del Estero. 
+            El objetivo primordial es informar al ciudadano y por ende a los proveedores respecto de los distintos procedimientos de compra que lleva a cabo el Ministerio Público Fiscal, con la finalidad de atender los gastos inherentes a la gestión operativa de este Ministerio, que son necesarias para el correcto funcionamiento del servicio de justicia, en todas las circunscripciones de la provincia de Santiago del Estero bajo los lineamientos del régimen legal vigente y en un marco de transparencia.
+            Nuestra meta es fortalecer la concurrencia de oferentes para asegurar la obtención de los mejores precios y calidad en relación a las necesidades que originaron la contratación, velando por la igualdad de los oferentes, con la provisión oportuna a la mejor relación costo beneficio. 
+            Si Usted no es proveedor habitual del Estado le invitamos a acercarse, ya que encontrará garantía de transparencia y asesoramiento para poder participar de los procedimientos de compra.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <!-- Modal -->
+            <div class="modal fade" id="modal-informacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">INFORMACIÓN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Accediendo a la sección "Licitaciones" se podrán consultar:
+"Contrataciones Históricos”: son procedimientos cuya apertura de ofertas ya se realizó y se encuentra en etapa de adjudicación o han sido adjudicados. <br>
+
+"Contrataciones en Tramite”: son aquellos procedimientos que se encuentran en circuito administrativo a la espera de una fecha cierta para su llamado a contratación. <br>
+
+"Contrataciones Vigentes”: son aquellos procedimientos vigentes con fecha cierta en los que aún no se ha llevado a cabo la apertura de las oferta.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
   
+
+
 
      
 
