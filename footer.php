@@ -26,7 +26,7 @@
 									<li><a target="blank" href="https://www.mpf.gob.ar/">Ministerio Público Fiscal de la Nación</a></li>
 									<li><a target="blank" href="http://www.jussantiago.gov.ar/jusnueva/index.php">Poder Judicial de Santiago del Estero</a></li>
 								</ul>
-							</div>
+							</div> 
 							<div class="col-12  col-md-4">
 								<h5>Enlaces de interés</h5>
 								<ul>
