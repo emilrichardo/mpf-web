@@ -2,11 +2,11 @@
 
 
 
-<div class="bg-infosss">
+<div class="bg-light">
   
   
     <div class="container">
-   <ol class="breadcrumb bg-white text-uppercase d-flex align-items-center" typeof="BreadcrumbList" vocab="https://schema.org/">
+   <ol class="breadcrumb  text-uppercase d-flex align-items-center" typeof="BreadcrumbList" vocab="https://schema.org/">
       <?php if(function_exists('bcn_display'))
       {
           bcn_display();
@@ -19,7 +19,7 @@
     
      
     
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center align-items-center">
           <div class="col-12 col-md-10">
             <div class="page-title">
                
@@ -60,12 +60,7 @@
    
             <div class="noticias-list mt-2 ">
 
-               <?php 
-  // the query
-  $wpb_all_query = new WP_Query(array(
-    'post_type'=>'contratacion', 
-     
-    'posts_per_page'=>2,  )); ?>
+              
     
     <?php   if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -74,7 +69,7 @@
 
               <!-- the loop -->
 
-              <div class="item filter bg-light p-4 rounded my-3 <?php   // Get terms for post
+              <div class="item filter bg-white border border-secondary py-3 px-2 px-md-5 rounded my-2 <?php   // Get terms for post
                   $terms = get_the_terms( $post->ID , 'tipo' );
                  // Loop over each item since it's an array
                   if ( $terms != null ){
@@ -83,7 +78,8 @@
                      print $term->slug ;
                  // Get rid of the other data stored in the object, since it's not needed
                      unset($term);
-                   } } ?> <?php   // Get terms for post
+                   } } ?> 
+                   <?php   // Get terms for post
                $terms = get_the_terms( $post->ID , 'contratacion' );
                // Loop over each item since it's an array
                if ( $terms != null ){
@@ -93,14 +89,19 @@
                // Get rid of the other data stored in the object, since it's not needed
                unset($term);
               } } ?>">
-                <div class="row text-left align-items-center">
+                <div class="row text-center text-md-left align-items-center">
                   <div class="col-md-6">
                     
-                    <span class="badge badge-success"><?php $terms = get_the_terms($post->ID, 'contratacion');foreach($terms as $term){echo $term->name;} ?></span>
-                    <br>
-                    <span>Objeto:</span>
-                    <h5><strong><?php the_title(); ?></strong></h5>
-                    <p><?php echo do_shortcode('[types field="estado-contratacion"]'); ?></p>
+                    
+                    <span><small>Estado:</small> <?php echo(types_render_field( 'estado-contratacion', array( 'separator' => '' ) )); ?></span> 
+                    <span><small>Tipo:</small> <span class="badge badge-light"><?php $terms = get_the_terms($post->ID, 'contratacion');foreach($terms as $term){echo $term->name;} ?></span></span>
+
+                    <h2 class="my-3"><?php echo do_shortcode('[types field="tipo-y-n"]'); ?></h2>
+                    
+                    <h5><?php the_title(); ?></h5>
+                    
+
+                    
                   </div>
                   <div class="col-md-6">
                     <table class="table table-sm table-striped text-left border" >               
@@ -109,28 +110,23 @@
                 
 
                 <tbody>
-                  <tr>
-                    
-                    <td>Tipo y N°:</td>
-                    <td><strong><?php echo do_shortcode('[types field="tipo-y-n"]'); ?></strong></td>
-                    
-                  </tr>
+                  
                   
                   <tr>
                     
-                    <td>Fecha de Apertura:</td>
+                    <td><i class="fa  fa-calendar"></i> Fecha de Apertura:</td>
                     <td><?php echo do_shortcode('[types field="fecha-de-apertura"]'); ?></td>
                     
                   </tr>
                   <tr>
                     
-                    <td>Monto estimado:</td>
+                    <td><i class="fa  fa-calculator"></i> Monto estimado:</td>
                     <td><?php echo do_shortcode('[types field="monto-estimado"]'); ?></td>
                     
                   </tr>
                   <tr>
                     
-                    <td colspan="2">Documentación:  
+                    <td colspan="2"><i class="fa  fa-file"></i> Documentación:  
 
                       <a  href="<?php echo(types_render_field('documentacion')); ?>" target="blank">
 
