@@ -42,6 +42,32 @@
             <!-- Button trigger modal -->
             
             <br>
+
+            <div class="bg-succes runded p-3">
+              <h4>Lo invitamos a participar de nuestras contrataciones.<br> Dejenos sus datos y nos contactaremos con usted.</h4>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proveedor-form">
+                Ser proveedor
+              </button>
+            </div>
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="proveedor-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sea proveedor</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <?php echo do_shortcode('[contact-form-7 id="610" title="Proveedores"]'); ?>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
            
 
 

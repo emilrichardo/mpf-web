@@ -3,7 +3,7 @@
 			<div class="container">
 				<span class="tel-h mr-2"><i class="fa fa-phone-square text-info"></i> (0385) 4504700</span>
 				<span class="dir-h hidden-xs ml-5 text-secondary d-none d-md-inline-block">
-					<span class="badge badge-success text-dark"><i class="fa  fa-map-marker"></i> Nueva dirección</span>
+					<span class="badge badge-success text-dark"><i class="fa  fa-map-marker"></i> Dirección</span>
 					<small>Yrigoyen 706, Santiago del Estero Capital</small>
 				</span>
 						<div class="float-right">

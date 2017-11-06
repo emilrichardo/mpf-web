@@ -14,9 +14,9 @@
 							<div class="col-12  col-md-3">
 								<h5>Menú principal</h5>
 								<ul>
-									<li><a href="#">Institucional</a></li>
-									<li><a href="#">Noticias</a></li>
-									<li><a href="#">Contacto</a></li>
+									<li><a href="<?php echo home_url('/'); ?>el-ministerio">Institucional</a></li>
+									<li><a href="<?php echo home_url('/'); ?>noticias">Noticias</a></li>
+									<li><a href="<?php echo home_url('/'); ?>contacto">Contacto</a></li>
 								</ul>
 							</div>
 							<div class="col-12  col-md-5">
