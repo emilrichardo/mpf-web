@@ -11,7 +11,7 @@
 					</div>
 					<div class="col-12  col-md-8">
 						<div class="row">
-							<div class="col-12  col-md-3">
+							<div class="col-11  col-md-3">
 								<h5>Menú principal</h5>
 								<ul>
 									<li><a href="<?php echo home_url('/'); ?>el-ministerio">Institucional</a></li>
@@ -19,7 +19,7 @@
 									<li><a href="<?php echo home_url('/'); ?>contacto">Contacto</a></li>
 								</ul>
 							</div>
-							<div class="col-12  col-md-5">
+							<div class="col-11  col-md-5">
 								<h5>Enlaces Judiciales</h5>
 								<ul>
 									<li><a target="blank" href="http://www.jus.gob.ar/">Ministerio de Justicia de la Nación</a></li>
@@ -27,7 +27,7 @@
 									<li><a target="blank" href="http://www.jussantiago.gov.ar/jusnueva/index.php">Poder Judicial de Santiago del Estero</a></li>
 								</ul>
 							</div> 
-							<div class="col-12  col-md-4">
+							<div class="col-11  col-md-4">
 								<h5>Enlaces de interés</h5>
 								<ul>
 									<li><a target="blank" href="http://www.afip.gob.ar/sitio/externos/default.asp">AFIP - Administración Federal</a></li>
