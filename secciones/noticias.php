@@ -3,7 +3,7 @@
 			<h3 class="h5 text-uppercase title-sec">Noticias y Novedades <a href="<?php echo home_url('/'); ?>noticias" class="btn-primary btn btn-sm ml-3 d-none d-md-inline-block">Ver todas <i class="fa fa-angle-right "></i></a> </h3>
 			<hr>
 
-			<div class="row mt-5">
+			<div class="row mt-2 mt-md-5">
 
 				<!-- comienza super noticia -->
 
@@ -26,12 +26,13 @@
 					 <div class="img-cont">
 					 	 
 					 	 <?php the_post_thumbnail('large', ['class' => 'card-img']); ?>
+					 	 <?php echo do_shortcode(' [featured-video-plus]'); ?>
 					 </div>
-					  <div class="card-img-overlay p-5 ">
+					  <div class="card-img-overlay p-md-5 ">
 					  	<div class="caption">
 					  		<span><span class="mes"><?php the_time('M'); ?></span>
            					<span class="anio"><?php the_time('Y'); ?></span></span>
-						    <h1 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						    <h2 class="h1 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						    
 						    
 						    <a href="<?php the_permalink(); ?>" class="btn btn-outline-light">Ver más <i class="fa fa-angle-right ml-2"></i></a>
@@ -243,7 +244,7 @@
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="col-12 col-md-6 capacitacion mt-4">
+				<div class="col-12 col-md-6 capacitacion mt-4 text-center text-md-left">
 					<div class="row align-items-center">
 						<div class="col-12 col-md-5">
 							<div class="feature">
