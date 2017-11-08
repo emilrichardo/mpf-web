@@ -93,6 +93,7 @@ function remove_admin_login_header() {
 }
 add_action('get_header', 'remove_admin_login_header');
 
-// category list
+// excerpt para paginas
+add_post_type_support( 'page', 'excerpt' );
 
    ?>
