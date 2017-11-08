@@ -43,7 +43,7 @@
             
             <br>
 
-            <div class="bg-succes runded p-3">
+            <div class="bg-succes runded p-3 d-none">
               <h4>Lo invitamos a participar de nuestras contrataciones.<br> Dejenos sus datos y nos contactaremos con usted.</h4>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proveedor-form">
                 Ser proveedor
