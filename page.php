@@ -34,10 +34,7 @@
             
             <div class="lead excerpt text-center mt-4"><?php echo do_shortcode('[types field="bajada"]'); ?></div>
   
-            <p class="excerpt lead">
-              
-            </p>
-            <br>
+            
   
             <div class="feature-single <?php echo do_shortcode('[types field="ocultar-feature"]'); ?>">
               <?php the_post_thumbnail('large', array('class' => 'img-fluid', 'title' => 'Feature image')); ?>
@@ -49,18 +46,20 @@
               </a>
             </div> -->
   
-            <section class="content-single text-left">
-              <?php the_content(); ?>
-  
-            </section>
+            
            
             <section id="galeria" class="galeria <?php echo do_shortcode('[types field="ocultar-galeria-slider"]'); ?>">
-              <div class="galery-system <?php //echo do_shortcode('[types field="opciones-de-galeria-y-slider"]'); ?>">
-              <div>
+              <div class="galery-system <?php echo do_shortcode('[types field="opciones-de-galeria-y-slider"]'); ?>">
+              <div  class="mt-3">
               <?php echo(types_render_field( 'galeria-de-fotos', array( 'separator' => '</div><div class="mt-3">' ) )); ?>
                 
                 </div>
               </div>
+            </section>
+
+            <section class="content-single text-left">
+              <?php the_content(); ?>
+  
             </section>
   
             

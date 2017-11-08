@@ -52,7 +52,7 @@
             </div>
           </section>
 
-          <section class="content-single text-left">
+          <section class="content-single text-left my-3">
             <?php the_content(); ?>
 
           </section>
