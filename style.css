@@ -3,6 +3,10 @@ body{
 	overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+	
+}/**/
+
 ul {padding: 0;}
 
 li{
@@ -24,6 +28,18 @@ a:hover{
 header{
 	    border-bottom: solid 1px #e0e0e0;
 }
+
+
+.navbar-brand img{}
+
+@media (max-width:768px ) {
+.navbar-brand img{
+	max-width: 190px;
+}	
+}/**/
+
+
+
 
 .navbar-nav{
 
@@ -68,7 +84,7 @@ header{
 
 @media (max-width: 991px) {
 .navbar-collapse{
-	background: #090921;
+	background: #fff!important;
 	margin-top: 1em;
 }
 
@@ -79,7 +95,7 @@ header{
 }
 
 .navbar-collapse li + li{
-	border-top: solid 1px
+	border-top: solid 1px #eee;
 }
 	
 }/**/
@@ -98,7 +114,7 @@ header{
 	background-image: url("images/bg-slider.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	padding: 7em 0 !important;
+	
 	overflow: hidden;
 	position: relative;
 
@@ -108,10 +124,16 @@ header{
 
 
 @media (max-width: 768px) {
-	.welcome {
+	.welcome h2 {
+	font-size:1.2rem 
+	}
 
+	.welcome p{
+		font-size: .8rem;
 	}
 }/**/
+
+
 
 
 
@@ -194,6 +216,18 @@ header{
 	letter-spacing: .2em;
 }
 
+
+@media (max-width: 767px){
+	section.noticias .title-sec{
+	font-size: 1rem;
+}
+
+section.noticias .card-super h2{
+	font-size: 1.5rem
+}
+
+
+	}/**/
 
 
 .card-img-left {
@@ -400,7 +434,7 @@ footer ul li{ margin:.5em 0}
 	text-overflow:ellipsis;
   white-space:nowrap; 
   overflow:hidden;
-  max-width: 300px; 
+  max-width: 200px; 
 }
 
 
@@ -413,6 +447,13 @@ footer ul li{ margin:.5em 0}
     content : '';
 }
 
+
+
+@media (max-width: 768px) {
+	.breadcrumb li + li {
+		display: none;
+	}
+}/**/
 
 /*single*/
 .single .page-title{text-align: center;}
@@ -457,7 +498,7 @@ section.carousel-single .slick-next, .circ-contenido  .slick-prev{
 article .content-single{
 
 max-width: 800px;
-margin: 4em auto
+
 }
 
 article .content-single p{
