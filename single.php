@@ -17,7 +17,7 @@
 </ol>
     
     <div class="row justify-content-center">
-      <div class="col-md-11 col-12">
+      <div class="col-md-10 col-12">
         <article>
           
 
@@ -43,7 +43,7 @@
 
          <section id="galeria" class="galeria <?php echo do_shortcode('[types field="ocultar-galeria-slider"]'); ?>">
 
-            <h3>Galería de imágenes</h3>
+            
             <div class="galery-system single-slider <?php //echo do_shortcode('[types field="opciones-de-galeria-y-slider"]'); ?>">
             <div>
             <?php echo(types_render_field( 'galeria-de-fotos', array( 'separator' => '</div><div>' ) )); ?>
