@@ -119,6 +119,16 @@ body header .current-menu-item .span-line {
 
 
 
+/*login modal*/
+
+.modal-login{}
+.modal-login input{
+	display: block!important;
+	width: 100%;
+	font-size: 2em;
+	border: solid 1px #eee
+}
+
 
 
 .category-noticias header li.link-noticias span, .page-circunscripcion li.link-circunscripciones span, .page-elministerio li.link-about span, .page-contact li.link-contact span {

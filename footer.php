@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-12  col-md-4">
 						<ul class="lead links-main">
-							<li><a href="#">Preguntas frecuentes</a></li>
+							<li><a href="<?php echo home_url('/'); ?>el-ministerio/preguntas-frecuentes">Preguntas frecuentes</a></li>
 							<li><a href="<?php echo home_url('/'); ?>el-ministerio/circunscripciones/">Circusncripciones Judiciales</a></li>
 							<li><a href="<?php echo home_url('/'); ?>el-ministerio/">Sobre El Ministerio</a></li>
 						</ul>

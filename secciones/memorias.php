@@ -5,11 +5,16 @@
 					<ul>
 						<li>
 							<i class="fa fa-gavel"></i>
-							<span>Memorias <br><small><a href="#">2015</a><a href="#">2014</a><a href="#">2013</a></small></span>
+							<span>Memorias <br>
+								<small>
+								<a class="btn btn-light btn-sm" href="http://www.mpfsde.gob.ar/el-ministerio/memorias/">Ver memorias en PDF</a>
+								
+								</small>
+							</span>
 						</li>
 						<li>
 							<i class="fa fa-book"></i>
-							<span>Resoluciones <br><small><a href="#">2015</a></small></span>
+							<span>Resoluciones <br><small><a href="http://www.mpfsde.gob.ar/el-ministerio/resoluciones/">2015</a></small></span>
 						</li>
 						
 					</ul>

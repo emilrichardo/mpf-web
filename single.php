@@ -38,7 +38,7 @@
           <br>
 
           <div class="feature-single <?php echo do_shortcode('[types field="ocultar-feature"]'); ?>">
-            <?php the_post_thumbnail('large', array('class' => 'img-fluid', 'title' => 'Feature image')); ?>
+            <?php the_post_thumbnail('large', array('class' => 'img-fluid', 'title' => get_the_title() )); ?>
           </div>
 
          <section id="galeria" class="galeria <?php echo do_shortcode('[types field="ocultar-galeria-slider"]'); ?>">

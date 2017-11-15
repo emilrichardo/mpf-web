@@ -9,9 +9,11 @@
 						<div class="float-right">
 							<?php  global $current_user; wp_get_current_user(); ?>
 								<?php if ( is_user_logged_in() ) {
-									echo '<i class"fa fa-user"></i>';
-							    	echo ' <span>¡Hola</span> <span class="name-user">' . $current_user->display_name . "\n". '</span> !';
-							    	echo '<i class="fa  fa-sign-out"></i>';
+									
+									
+							    	echo ' <span class="name-user text-secondary">' . $current_user->display_name . "\n". '</span> ';
+							    	echo ' <a class="btn btn-primary btn-sm py-0 text-info"  href="http://www.mpfsde.gob.ar/wp-admin/"><i class="fa  fa-wordpress "></i></a> ';
+							    	echo '<i class="fa  fa-sign-out text-primary"></i>';
 							     	wp_loginout(home_url(''));
 									} else {
 										echo '<a  data-toggle="modal" href="#login-box" class="btn float-right btn-primary btn-sm py-0 px-3 text-info"><i class="fa fa-lock"></i>';
@@ -61,15 +63,16 @@
 
 
 	<!-- Modal -->
-	<div class="modal fade" id="login-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade modal-login" id="login-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" >Iniciar sesión</h4>
+	      	<h4 class="modal-title" >Iniciar sesión</h4>
+	        <button type="button" class="close f-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        
 
 	      </div>
-	      <div class="modal-body">
+	      <div class="modal-body p-5 rounded bg-light m-3">
 	        <?php wp_login_form( $args
 				 = array(
 				 	'form_id'=> 'miform',

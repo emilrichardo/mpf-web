@@ -3,7 +3,7 @@
 			<h3 class="h5 text-uppercase title-sec">Noticias y Novedades <a href="<?php echo home_url('/'); ?>noticias" class="btn-primary btn btn-sm ml-3 d-none d-md-inline-block">Ver todas <i class="fa fa-angle-right "></i></a> </h3>
 			<hr>
 
-			<div class="row mt-2 mt-md-5">
+			<div class="row mt-2 mt-md-3">
 
 				<!-- comienza super noticia -->
 
@@ -62,7 +62,7 @@
 						<div class="card   text-dark border-0 text-center text-md-left" >
 						  <div class="row align-items-center">
 						  	<div class="img-cont col-md-6">
-						  		<?php the_post_thumbnail('medium', array('class' => 'card-img')); ?>
+						  		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'card-img')); ?></a>
 						  	</div>
 						  	<div class="col-md-6 p-5 m-0">
 						  		<span><span class="mes"><?php the_time('M'); ?></span>
@@ -99,7 +99,7 @@
 							<div class="col-md-4">
 								<div class="card" >
 								  <div class="img-cont">
-								  	<?php the_post_thumbnail('medium', array('class' => 'card-img')); ?>
+								  	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'card-img')); ?></a>
 								  </div>
 								  <div class="card-body">
 								  	<small><span><span class="mes"><?php the_time('M'); ?></span>
@@ -143,10 +143,11 @@
 					<div class="nota-principal  col-12 mt-4">
 						<div class="card  bg-info  text-dark border-0 text-center text-md-left" >
 						  <div class="row align-items-center">
-						  	<div class="img-cont col-md-4">
+						  	<div class="img-cont col-md-5">
 						  		<?php the_post_thumbnail('medium', array('class' => 'card-img')); ?>
 						  	</div>
-						  	<div class="col-md-8 p-5 m-0">
+						  	<div class="col-md-7 p-5 m-0">
+						  		<h5 class="text-light"><?php echo do_shortcode('[types field="antetitulo"]'); ?></h5>
 						  		
 						  	  <h2 class="card-title h1 "><a href="<?php the_permalink(); ?>" class="text-dark font-weight-normal"><?php the_title(); ?></a></h2>
 						  	  

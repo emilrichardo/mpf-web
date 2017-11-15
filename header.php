@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109665268-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109665268-1');
+</script>
+
 	<meta charset="UTF-8">
 	<title><?php bloginfo('name'); ?>    <?php wp_title('|',true);?></title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
@@ -30,6 +40,8 @@
 
 <?php wp_head(); ?>
 <script>var $ = jQuery.noConflict();</script>
+
+<meta name="google-site-verification" content="1CCvqxq5fJ1AFHvGp-1dyHrxPzCEt_FO8ZRdzmtzYdU" />
 
 </head>
 
