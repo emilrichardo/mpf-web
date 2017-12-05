@@ -80,7 +80,7 @@
            <div class="filtro text-left mt-3">
               <button class="btn btn-light filter-button" data-filter="all">Todas las contrataciones</button>
                      <button class="btn btn-light filter-button" data-filter="licitaciones">Licitaciones</button>
-                     <button class="btn btn-light filter-button" data-filter="concurso-de-precios">Concurso de precios</button>
+                     <button class="btn btn-info filter-button" data-filter="concurso-de-precios">Concurso de precios</button>
            </div>
     
    

@@ -546,21 +546,26 @@ article .content-single img{
 	margin: 2em 0;
 }
 
-small.epigrafe{
-	margin-top: -1.8em;
+article .content-single .wp-caption img{
+	margin-bottom: .3em;
+}
+
+article .content-single .wp-caption .wp-caption-text{
+	
 	display: block;
-	margin-bottom: 2em;
-	padding-left: 4em;
+	font-size: .9em;
+	padding-left: 2em;
 	position: relative;
 	color: #666;
 }
 
-small.epigrafe:before{
+article .content-single .wp-caption .wp-caption-text:before{
 	content: "\f083";
 	font-family: "fontawesome";
 	position: absolute;
-	left: 1.5em;
-	top: 30%;
+	left: 0em;
+	
+	
 }
 
 small.ep-slider{
@@ -661,6 +666,10 @@ article .sep-top{
     .content-single img{
     	max-width: 100%;
     	height: auto;
+    }
+
+    .content-single .wp-caption {
+    	width: 100%!important;
     }
 
     /*page noticias*/
@@ -914,6 +923,10 @@ margin-bottom: 5px;
 	content: "\f105";
 	font-family: "fontAwesome";
 	margin-left: 10px;
+}
+
+.noticias-list  .concurso-de-precios{
+	background-color:#E1F4F7!important;
 }
 
 
