@@ -35,6 +35,18 @@
 		</div>
 	</section>
 
+	<section class="bottom py-3 bg-succes text-light d-none">
+		<div class="container">
+			<?php wp_nav_menu( array( 
+				'theme_location' => 'secondary', 
+				'container' => 'span', 
+				'menu_class'=>'navbar-nav-bottom text-uppercase d-md-flex justify-content-around mb-0', 
+				'menu_id'=> 'nav-bottom',
+				// 'before'=>'<i class="fa ico-nav"></i>', 
+				'after'=> '<span class="span-line"></span>' ) ); ?>
+		</div>
+	</section>
+
 
 <!-- secciones -->
 <?php include("secciones/noticias.php") ?>
