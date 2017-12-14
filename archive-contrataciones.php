@@ -130,7 +130,7 @@
                     
                   </div>
                   <div class="col-md-6">
-                    <table class="table table-sm table-striped text-left border" >               
+                    <table class="table table-sm table-striped text-left" >               
                 
                 
                 
