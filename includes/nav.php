@@ -1,9 +1,9 @@
 
 <div class="top-nav bg-dark text-light py-1">
 			<div class="container">
-				<span class="tel-h mr-2"><i class="fa fa-phone-square text-info"></i> (0385) 4504700</span>
+				<span class="tel-h mr-2"><i class="fa fa-phone-square text-success"></i> (0385) 4504700</span>
 				<span class="dir-h hidden-xs ml-5 text-light d-none d-md-inline-block">
-					<span class="badge badge-dark text-info"><i class="fa  fa-map-marker"></i> </span>
+					<span class="badge badge-dark text-success"><i class="fa  fa-map-marker"></i> </span>
 					<small>Yrigoyen 706, Santiago del Estero Capital</small>
 				</span>
 						<div class="float-right">

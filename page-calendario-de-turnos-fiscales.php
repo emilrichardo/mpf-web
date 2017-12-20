@@ -73,7 +73,7 @@ foreach( $children as $post ) {
         setup_postdata( $post ); ?>
    
       <div class="col-md-6">
-        <div class="row justify-content-center align-items-center my-3 bg-white rounded ">
+        <div class="row justify-content-center align-items-center my-3 mx-1 bg-white rounded ">
             <div class="img-chid-page col-8  col-md-2 rounded  px-0 ">
                 <?php the_post_thumbnail( 'medium', array('class'=>'img-fluid w-100 my-3') );   ?>
             </div>
@@ -82,7 +82,7 @@ foreach( $children as $post ) {
                         
         
         
-                        <a href="<?php the_permalink() ?>" class="btn btn-outline-dark">Turnos fiscales de <strong><?php the_title() ?></strong><i class="fa fa-plus-circle ml-3"></i></a>
+                        <a href="<?php the_permalink() ?>" class="btn btn-outline-dark">Ver turnos<i class="fa fa-plus-circle ml-3"></i></a>
             </div>
             
             

@@ -1,8 +1,44 @@
 <?php get_header(); ?>
 
+<?php query_posts( array(
+					    'category_name'  => 'notificacion',
+					    'posts_per_page' => 1,
+					    'orderby' => 'date',
+					    
+					      
+					    
+					) ); ?>
+<?php   if ( have_posts() ) { ?>
+<?php while ( have_posts() ) : the_post(); ?>
+
+<section class=" notificacion ">
+	
 
 
-<section class="welcome bg-primary  text-light h-100 py-md-5 py-4">
+<div class="alert alert-dismissible fade show bg-info  clearfix text-center py-3" role="alert">
+
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+	
+<div class="container">
+
+	
+  <h3 class="h5 card-title text-uppercase"><a href="<?php the_permalink(); ?>" class="text-primary"><?php the_title(); ?> <i class="fa fa-long-arrow-right"></i></a></h3>
+			 <small ><?php echo do_shortcode('[types field="bajada"]'); ?><a href="<?php the_permalink(); ?>" class="text-light d-none">Leer más</a></small>
+  
+  
+</div>
+
+			
+		
+		
+	</div>
+</section>
+<?php endwhile; // end of the loop. ?>
+<?php } ?>
+
+<section class="welcome bg-primary  text-light h-100 py-md-4 py-2">
 
 	<div class="fullscreen-bg ">
     <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
@@ -11,7 +47,7 @@
         
     </video>
 </div>
-		<div class="container py-md-5">
+		<div class="container py-md-4">
 			<div class="row justify-content-center text-center">
 				<div class="col-md-8 col-11">
 					<h2 class="font-weight-light">¡Bienvenidos al sitio web del Ministerio Público Fiscal de Santiago del Estero!</h2>
@@ -46,6 +82,8 @@
 				'after'=> '<span class="span-line"></span>' ) ); ?>
 		</div>
 	</section>
+
+	
 
 
 <!-- secciones -->

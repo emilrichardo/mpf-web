@@ -1,3 +1,5 @@
+
+
 <section class="noticias bg-light py-5 text-center text-md-left">
 		<div class="container">
 			<h3 class="h5 text-uppercase title-sec">Noticias y Novedades <a href="<?php echo home_url('/'); ?>noticias" class="btn-primary btn btn-sm ml-3 d-none d-md-inline-block">Ver todas <i class="fa fa-angle-right "></i></a> </h3>

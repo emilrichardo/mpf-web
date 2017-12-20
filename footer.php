@@ -47,7 +47,7 @@
 					<div class="col-12  col-md-3 col-md-offset-1 center-xs start-md">
 						<p><span><i class="fa fa-phone-square"></i> (0385) 4504700</span><br> <br>
 							<span>
-								<span><i class="fa  fa-map-marker"></i> </span> Irigoyen y Chaco <br> Santiago del Estero Capital
+								<span><i class="fa  fa-map-marker"></i> </span> Yrigoyen y Chaco <br> Santiago del Estero Capital
 							</span></p>
 					</div>
 					<div class="col-12  col-md-4 center-xs start-md">
