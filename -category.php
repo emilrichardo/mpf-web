@@ -18,24 +18,19 @@
     <div class="row center-xs">
       <div class="col-xs-12 col-md-10">
         <div class="page-title">
-          <h1>Noticias y novedades</h1>
+          <h1><?php single_cat_title(); ?></h1>
           <span class="center-square"></span>
         </div>
-        <nav class="menu-filter">
-          <ul class="row around-xs"><?php str_replace("title=\"View all posts filed under ","",wp_list_categories('use_desc_for_title=0&exclude=1,2,3,4,5&title_li=&hierarchical=1')); ?>
+        <!-- <nav class="menu-filter">
+          <ul class="row around-xs">
+            <li><a href="#">Todas</a></li>
+            <li><a href="#">Galería de fotos</a></li>
+            <li><a href="#">Capacitación</a></li>
+            <li><a href="#">Fiscalias móviles</a></li>
           </ul>
-        </nav> 
-
-        <?php 
-// the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1,  )); ?>
-
-<?php if ( $wpb_all_query->have_posts() ) : ?>
+        </nav> -->
         <div class="noticias-list">
-
-
-          <!-- the loop -->
-  <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
           <div class="bg-box item-noticia">
             <div class=" row middle-xs start-xs">
@@ -54,17 +49,11 @@ $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish
               </div>
             </div>
           </div><!-- item --> 
-          <?php endwhile; ?>
 
-       
+          <?php endwhile ;?>
+      <?php endif ;?>
+
         </div><!-- noticias-list -->
-          <?php wp_reset_postdata(); ?>
-
-<?php else : ?>
-  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php endif; ?>
-
-
       </div><!-- 8 col -->
     </div><!-- end row -->
   </div>
@@ -73,8 +62,6 @@ $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish
   
 
 
-
-
-
 <!-- FOOTER ########################--> 
 <?php get_footer(); ?> 
+

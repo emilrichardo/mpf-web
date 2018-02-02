@@ -41,12 +41,8 @@
 
           <div class="bg-box item-noticia"  itemprop="itemListElement" id="post-<?php the_ID(); ?>" >          
             <div class=" row middle-xs start-xs">
-              <div class="col-xs-12 col-md-6">
-                <div class="feature">
-                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', ['class' => 'img-responsive img-wide responsive--full', 'title' => 'Feature image']); ?></a>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-6">
+              
+              <div class="col-xs-12 col-md-12">
                 <div class="caption">
                   <span><span class="mes"><?php the_time('M'); ?></span>
            <span class="anio"><?php the_time('Y'); ?></span></span>

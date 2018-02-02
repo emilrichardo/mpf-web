@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); ?><!-- HEADER ########################-->
 
 <div class="margin-body"  data-spy="affix" data-offset-top="90"></div>
  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -49,7 +49,34 @@
             <?php the_content() ?>
 
 
-            
+            <?php
+            $args = array(
+                'post_type'      => 'page',
+                'posts_per_page' => -1,
+                'post_parent'    => $post->ID,
+                'order'          => 'ASC',
+                'orderby'        => 'menu_order'
+             );
+
+
+            $parent = new WP_Query( $args );
+
+            if ( $parent->have_posts() ) : ?>
+
+                <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
+
+                    <div id="parent-<?php the_ID(); ?>" class="parent-page bg-info padd-section">
+
+                        <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+                        <?php the_content() ?>
+
+                        
+
+                    </div>
+
+                <?php endwhile; ?>
+
+            <?php endif; wp_reset_query(); ?>
 
 
 
@@ -70,47 +97,5 @@
     <?php endif ;?>
 
 <!-- FOOTER ########################--> 
+<?php get_footer(); ?> 
 
-
-<div class="container">
-
-
-
-<div class="row center-xs">
-	<div class="col-xs-12 col-md-8">
-		<?php $user_info = get_userdata(1);
-		echo '<h1>';
-      echo ' Bienvenido ' . $user_info->user_login . "\n" ;
-      echo '</h1>'
-     
-?>
-
-<?php if ( is_user_logged_in() ) { ?>
-    <a href="<?php echo wp_logout_url(); ?>" class="btn btn-info"> <i class="fa  fa-sign-out"></i> Cerrar sesión</a>
-<?php } else { ?>
-    <a href="/wp-login.php" title="Members Area Login" rel="home" class="btn btn-info">Members Area</a>
-<?php } ?>
-	</div>
-</div>
-
-
-
-
-	
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

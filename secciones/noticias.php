@@ -1,15 +1,12 @@
 
 
-<section class="noticias bg-light py-5 text-center text-md-left">
+
+<section id="noticias" class="noticias padd-section bg-gris">
 		<div class="container">
-			<h3 class="h5 text-uppercase title-sec">Noticias y Novedades <a href="<?php echo home_url('/'); ?>noticias" class="btn-primary btn btn-sm ml-3 d-none d-md-inline-block">Ver todas <i class="fa fa-angle-right "></i></a> </h3>
-			<hr>
+			<h2 class="sec">Noticias y Novedades <a href="noticias.php" class="btn btn-primary">Ver todas <i class="fa fa-angle-right "></i></a></h2>
 
-			<div class="row mt-2 mt-md-3">
-
-				<!-- comienza super noticia -->
-
-				<?php query_posts( array(
+			
+			<?php query_posts( array(
 					    'category_name'  => 'prensa',
 					    'posts_per_page' => 1,
 					    'orderby' => 'date',
@@ -19,34 +16,61 @@
 					    
 					) ); ?>
 
-
+					<div class="news-primary">
 					<?php   if ( have_posts() ) { ?>
+				
+					
+					
+					<!-- comienza box super -->
+					<div class="bg-box">
+						<div class="row middle-xs">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="col-xs-12 col-md-8">
+								<div class="feature">
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', ['class' => 'img-responsive img-wide responsive--full']); ?></a>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4  center-xs start-md">
+								<div class="caption">
+									<span><span class="mes"><?php the_time('M'); ?></span>
+           <span class="anio"><?php the_time('Y'); ?></span></span>
+									<h3><?php the_title(); ?></h3>
+									<a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Ver más <i class="fa fa-angle-right "></i></a>
+								</div>							
+							</div>
+							<?php endwhile; // end of the loop. ?>
 
-				<div class="col-md-12 col-12 mb-5">
-					<?php while ( have_posts() ) : the_post(); ?>
-					<div class="card card-super text-dark border-0 text-center ">
-					 <div class="img-cont">
-					 	 
-					 	 <?php the_post_thumbnail('large', ['class' => 'card-img']); ?>
-					 	 <?php echo do_shortcode(' [featured-video-plus]'); ?>
-					 </div>
-					  <div class="card-img-overlay p-md-5 ">
-					  	<div class="caption">
-					  		<span><span class="mes"><?php the_time('M'); ?></span>
-           					<span class="anio"><?php the_time('Y'); ?></span></span>
-						    <h2 class="h1 card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						    
-						    
-						    <a href="<?php the_permalink(); ?>" class="btn btn-outline-light">Ver más <i class="fa fa-angle-right ml-2"></i></a>
-					  	</div>
-					  </div>
-					</div>
-					<?php endwhile; // end of the loop. ?>
-				</div><!-- end intem -->
-				<?php } ?>
+							</div> <!-- en row -->
+						</div>
+
+							<br>
+							<!-- termina box super -->
+							<?php } ?>
+
+							
+					</div><!-- columna de 12 -->
 
 
-				<!-- Comienza noticia principal -->
+						<!-- comienza widget celeste -->
+						<div class="col-xs-12 col-md-12 news-primary">	
+							<div class="bg-info row text-center padd-section middle-xs center-xs">
+								
+
+								
+								<div class="col-xs-10 col-md-4">
+									<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/fachada.svg" alt="">
+								</div>
+								<div class="col-xs-10 col-md-5">
+									<h2>Conocé el nuevo edificio del Ministerio Público Fiscal </h2>
+									<a href="el-edificio.php" class="btn btn-primary btn-lg btn-plus-left">Ver todas las oficinas piso por piso</a>
+								</div>
+							</div>
+						</div><!-- termina widget celeste -->
+
+
+
+					
+
 				<?php query_posts( array(
 						    'category_name'  => 'prensa',
 						    'posts_per_page' => 1,
@@ -57,31 +81,39 @@
 						    
 						) ); ?>
 						<?php   if ( have_posts() ) { ?>
-
-				
-				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="nota-principal  col-12 ">
-						<div class="card   text-dark border-0 text-center text-md-left" >
-						  <div class="row align-items-center">
-						  	<div class="img-cont col-md-6">
-						  		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'card-img')); ?></a>
-						  	</div>
-						  	<div class="col-md-6 p-5 m-0">
-						  		<span><span class="mes"><?php the_time('M'); ?></span>
-						  		           					<span class="anio"><?php the_time('Y'); ?></span></span>
-						  	  <h2 class="card-title h2 fw-light"><a href="<?php the_permalink(); ?>" class="text-dark font-weight-normal fw-light"><?php the_title(); ?></a></h2>
-						  	  
-						  	  <a href="<?php the_permalink(); ?>" class="btn btn-outline-dark">Ver más <i class="fa fa-angle-right ml-2"></i></a>
-						  	</div>
-						  </div>
+						<!-- comienza info primaria -->
+					<div class=" ">
+						<?php while ( have_posts() ) : the_post(); ?>
+						<div class="bg-box" <?php post_class(); ?>>
+							<div class="row middle-xs">								
+								<div class="col-xs-12 col-md-5  center-xs start-md ">							
+									
+									<div class="caption">
+										<span><span><span class="mes"><?php the_time('M'); ?></span>
+	           							<span class="anio"><?php the_time('Y'); ?></span></span></span>
+										<h3><?php the_title(); ?></h3>
+										<br>
+										<a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Ver más <i class="fa fa-angle-right "></i></a>
+									</div>							
+								</div>
+								<div class="col-xs-12 col-md-7 first-xs last-md">
+									<div class="feature">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail('medium', ['class' => 'img-responsive img-wide responsive--full']); ?>
+									</a>										
+									</div>
+								</div>								
+							</div>
 						</div>
-					</div><!-- end intem -->
-
-				<?php endwhile; // end of the loop. ?>
+						<br>
+						<?php endwhile; // end of the loop. ?>
+					</div>
+					<br>
+					<!-- termina info primaria -->
 					<?php } ?>
 
 
-
+					<!-- box info secundaria -->	
 					<?php query_posts( array(
 							    'category_name'  => 'prensa',
 							    'posts_per_page' => 3,
@@ -92,97 +124,85 @@
 							    
 							) ); ?>
 						<?php   if ( have_posts() ) { ?>
+						<div class="">
 
-						<div class="col-12 mt-2 mt-md-4">
-							<div class="row d-flex align-items-stretch text-center">
+						<div class="row noticias-secundarias">
+						<?php 
+						$count = 0;
 
-						<?php while ( have_posts() ) : the_post(); ?>
-				
-							<div class="col-md-4">
-								<div class="card" >
-								  <div class="img-cont">
-								  	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class' => 'card-img')); ?></a>
-								  </div>
-								  <div class="card-body">
-								  	<small><span><span class="mes"><?php the_time('M'); ?></span>
-										<span class="anio"><?php the_time('Y'); ?></span>
-									</span>
-								</small>
-								    <h4 class="card-title"><a href="<?php the_permalink(); ?>" class="text-dark"><?php the_title(); ?></a></h4>
-								    
-								    <a href="<?php the_permalink(); ?>" class="btn btn-outline-dark">Ver más <i class="fa fa-angle-right ml-2"></i></a>
-								  </div>
+						while (have_posts()) : the_post(); $count++; 
+
+						    if ( $count == 1 ) echo '<div class="col-xs-12"><div class="bg-box">';
+						    if ( $count == 2 ) echo '</div> <br></div><div class="col-xs-12 col-md-8 secundary  secundary-img"><div class="bg-box">';
+						    if ( $count > 2 ) echo '</div></div><div class="col-xs-12 col-md-4 font-size-80 secundary secundary-noimg"><div class="bg-box ">';
+
+
+						    ?>
+
+
+						    
+					
+						<div  <?php post_class(array('row middle-xs')); ?> id="post-<?php the_ID(); ?>" >
+							<?php if ( $count < 3 ) { ?>
+							<div class="col-xs-12 col-md-6">
+							<?php } ?>
+								<div class="feature">
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail('medium', ['class' => ' responsive--full']); ?>
+									</a>
+									
 								</div>
+							<?php if ( $count < 3 ) { ?>
+							</div>
+							<?php } ?>
+							
+
+
+							<?php if ( $count < 3 ) { ?>
+							<div class="col-xs-12 col-md-6  center-xs start-md ">
+							<?php } ?>
+								<div class="caption">
+									<span><span><span><span class="mes"><?php the_time('M'); ?></span>
+           							<span class="anio"><?php the_time('Y'); ?></span></span></span></span>
+									<h3><?php the_title(); ?></h3>
+									<br>
+									<a href="<?php the_permalink(); ?>" class="btn btn-default btn-lg">Ver más <i class="fa fa-angle-right "></i></a>
+								</div>
+
+								<?php if ( $count < 3 ) { ?>							
 							</div>
 
-					
-				<!-- end intem -->
+							<?php } ?>
 
-				<?php endwhile; // end of the loop. ?>
-
+							
 						</div>
-					</div>
+						
+					
+					<!-- end box secundario -->
+					<?php if ( $count > 3 ) { ?>
+					
 					<?php } ?>
 
 
+					<?php endwhile; // end of the loop.
+					echo "</div> <br></div>";
 
+					 ?>
 
+					 </div>
+					 </div>
 
-			<!-- Comienza noticia principal -->
-				<?php query_posts( array(
-						    
-						    'posts_per_page' => 1,
-						    'orderby' => 'date',
-						    'post_type' => 'post',
-						    'meta_key'   => 'wpcf-publicar-home', 
-						  	'meta_value' => 'contenido-fijo',  
-						    
-						) ); ?>
-						<?php   if ( have_posts() ) { ?>
+					
+					<?php } ?>
+
+					
 
 				
-				<?php while ( have_posts() ) : the_post(); ?>
-					<div class="nota-principal  col-12 mt-4">
-						<div class="card  bg-info  text-dark border-0 text-center text-md-left" >
-						  <div class="row align-items-center">
-						  	<div class="img-cont col-md-5">
-						  		<?php the_post_thumbnail('medium', array('class' => 'card-img')); ?>
-						  	</div>
-						  	<div class="col-md-7 p-5 m-0">
-						  		<h5 class="text-light"><?php echo do_shortcode('[types field="antetitulo"]'); ?></h5>
-						  		
-						  	  <h2 class="card-title h1 "><a href="<?php the_permalink(); ?>" class="text-dark font-weight-normal"><?php the_title(); ?></a></h2>
-						  	  
-						  	  <a href="<?php the_permalink(); ?>" class="btn btn-outline-dark">Ver más <i class="fa fa-angle-right ml-2"></i></a>
-						  	</div>
-						  </div>
-						</div>
-					</div><!-- end intem -->
-
-				<?php endwhile; // end of the loop. ?>
-					<?php } ?>		
 
 
-			</div><!-- row -->
-
-			
-			<!-- termina loop de noticas -->
-
-
-
-		</div><!-- container -->
-	</section>
-
-
-	 <!-- call-action ver mas noticias -->
-        <div class="ca-more-news bg-light pb-5">
-          <div class="container text-center">
-          	<div class="py-3 px-3 bg-white rounded">
-          		<a href="<?php echo home_url('/'); ?>noticias" class="btn btn-primary btn-lg"><i class="fa fa-plus-circle mr-2"></i> Ver todas las noticias</a>
-          	</div>
-          </div>
-        </div>
-
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</section><!-- seccion noticias -->
 
 	<?php query_posts( array(
 					    'category_name'  => 'galeria-de-fotos',
@@ -196,40 +216,35 @@
 
 					<?php   if ( have_posts() ) { ?>
 
-					
+					<?php while ( have_posts() ) : the_post(); ?>
 
 						
-	<section id="gal-cap" class="gal-cap bg-light py-2" >
+	<section id="gal-cap" class="gal-cap bg-gris" >
 		<div class="container">
 			<div class="row between-xs">
 				<div class=" col-xs-12 col-md-6 galeria-home">
-					<h4 class="h5 text-uppercase title-sec"><i class="fa  fa-camera"></i>Galería de fotos</h4>
+					<h3 class="subsec"><i class="fa  fa-camera"></i>Galería de fotos</h3>
+					<div class="row" id="galery-home">
 
-
-					<div class="row mt-3" id="galery-home">
-						<?php while ( have_posts() ) : the_post(); ?>
-
-						<div class="col-12 col-md-4">
+						<div class="col-xs-12 col-md-4">
 						<a href="<?php the_permalink(); ?>">
-							<div class="feature text-secondary bg-white p-1 rounded">
-								<?php the_post_thumbnail( array('class' => ' img-fluid rounded ')); ?>
-								<small><?php the_title(); ?>	</small>						
+							<div class="feature">
+								<?php the_post_thumbnail( ['class' => ' img-responsive']); ?>							
 							</div>
-							
+							<h5><?php the_title(); ?></h5>
 						</a>
 							
 						</div>
 						
 						
-
-						<?php endwhile; // end of the loop. ?>
-						
-						
 					</div><!-- ned row -->
-					
+					<script type="text/javascript">
+					  $('#galery-home').slickLightbox();
+					</script>	
+
 				</div><!-- end gallery -->
 
-				
+				<?php endwhile; // end of the loop. ?>
 						<?php } ?>
 
 
@@ -247,14 +262,14 @@
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="col-12 col-md-6 capacitacion mt-4 text-center text-md-left">
-					<div class="row align-items-center">
-						<div class="col-12 col-md-5">
+				<div class="col-xs-12 col-md-6 capacitacion">
+					<div class="row middle-xs bg-gris2 center-xs start-md">
+						<div class="col-xs-12 col-md-5">
 							<div class="feature">
 <a href="<?php the_permalink(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/capacitacion.svg" alt=""></a>							</div>
 						</div>
-						<div class="col-12 col-md-7">
-							<a href="<?php the_permalink(); ?>"  class="text-secondary"><!-- <span>30 de agosto y 1 de septiembre</span> -->
+						<div class="col-xs-12 col-md-7">
+							<a href="<?php the_permalink(); ?>" target="blank"><!-- <span>30 de agosto y 1 de septiembre</span> -->
 								<h4><?php the_title(); ?></h4>
 							</a>
 						</div>
@@ -278,21 +293,41 @@
 					) ); ?>
 
 
-	<section class="turnos-f bg-light bg-primary py-5 text-center">
-		<div class="row justify-content-center">
-			<div class="col-md-5 col-11">
-				<div class="card">
-				  <div class="card-header">
-				    FISCALES DE TURNO – 2017
-				  </div>
-				  <div class="card-body">			    
-				    <h3><i class="fa fa-calendar mb-2"></i> Calendario de Turnos Fiscales</h3>
-				    
-				    <a href="<?php echo home_url('/'); ?>el-ministerio/calendario-de-turnos-fiscales" class="btn btn-primary btn-block btn-lg">Ver calendario completo <i class="fa fa-plus-circle ml-2"></i></a>
-				  </div>
+
+					<?php   if ( have_posts() ) { ?>
+
+					<?php while ( have_posts() ) : the_post(); ?>
+
+
+	<section class="fiscmov bg-gris padd-section" id="fiscalias-moviles">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-4 control-fm">
+					<div class="bg-info full">
+						<h4>Fiscalías móviles</h4>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-8 fm-item">
+					<div class="bg-box">
+						<div class="row middle-xs">
+							<div class="col-xs-12 col-md-4">
+								<div class="feature">
+									<?php the_post_thumbnail(medium, ['class' => ' img-responsive']); ?>
+									<span class="square45"></span>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-8">
+								<a href="<?php the_permalink(); ?>" ><span>Mayo - 2017</span>
+									<h2><?php the_title(); ?></h2>
+								</a>
+							</div>
+						</div>
+					</div><!-- end row -->
 				</div>
 			</div>
 		</div>
-	</section>
-					
+	</section> <!-- fiscalias moviles -->
+
+	<?php endwhile; // end of the loop. ?>
+						<?php } ?>
 

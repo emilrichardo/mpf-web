@@ -74,7 +74,7 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'secondary' => __( 'Menú secundario' )
+      'extra-menu' => __( 'Extra Menu' )
     )
   );
 }
@@ -87,13 +87,6 @@ if(false === get_option("medium_crop")) {
     update_option("medium_crop", "1");
 }
   ?>
-  <?php //remover margen de la barra wordpress
-function remove_admin_login_header() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
-}
-add_action('get_header', 'remove_admin_login_header');
-
-// excerpt para paginas
-add_post_type_support( 'page', 'excerpt' );
+  <?php //cambiar texto login
 
    ?>
